@@ -8,17 +8,17 @@ import path from 'path'
 export default {
     input: "main.js",
     output: {
-        file: "dist/bundle.js",
+        file: "docs/bundle.js",
         format: "esm",
     },
     plugins: [
         resolve(),
         postcss({
-            extract: path.resolve('dist/consumed.css')
+            extract: path.resolve('docs/consumed.css')
         }),
-        serve('dist'),
+        serve('docs'),
         livereload({
-            watch: 'dist',
+            watch: 'docs',
             port: 10001
         })
     ]
